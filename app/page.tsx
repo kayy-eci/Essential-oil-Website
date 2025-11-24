@@ -12,13 +12,28 @@ export default async function Home() {
 
   return (
     <div>
-      <section>
-        <div>
-          <div>
-            <h2> Welcome to my Essetial Oil shop </h2>
-            <p> Explore our selection of essential oils.</p>
-            <Button asChild variant="default">
-              <Link href="/products">Browse Products</Link>
+      <section className="rounded bg-neutral-100 py-8 sm:py-12">
+        <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px16 md:grid-cols-2">
+          <div className="max-w-md space-y-4">
+            <h2 className="text-3xl font-bold tracking-light md:text-4xl">
+              {" "}
+              Welcome to my Essetial Oil shop{" "}
+            </h2>
+            <p className="text-neutral-600">
+              {" "}
+              Explore our selection of essential oils.
+            </p>
+            <Button
+              asChild
+              variant="default"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3 bg-black text-white"
+            >
+              <Link
+                href="/products"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3"
+              >
+                Browse Products
+              </Link>
             </Button>
           </div>
           <Image
@@ -30,7 +45,7 @@ export default async function Home() {
         </div>
       </section>
       <section>
-        <Carousel />
+        <Carousel products={products.data} />
       </section>
     </div>
   );
